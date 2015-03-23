@@ -66,6 +66,10 @@ a:hover {
 header {
   padding-top: 35px;
   padding-bottom: 25px;
+  height: 140px;
+  background-image: url("../images/gzll-220px.png");
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 header h1 {
