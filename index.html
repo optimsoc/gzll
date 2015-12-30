@@ -22,11 +22,6 @@
           <h2>The gzll runtime system</h2>
         </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/optimsoc/gzll/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/optimsoc/gzll/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/optimsoc/gzll" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
 
         <hr>
 
@@ -34,31 +29,23 @@
           <h3>
 <a id="welcome-to-gzll" class="anchor" href="#welcome-to-gzll" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to gzll</h3>
 
-<p>gzll is the compute node OS specifically designed for the OpTiMSoC project. It is designed to be portable to other platforms such as Kalray's MPPA or Adapteva's Parellela via a hardware abstraction layer.</p>
+<p>gzll is the compute node OS specifically designed for the OpTiMSoC
+project (while it may be ported to other platforms such as Kalray's
+MPPA or Adapteva's Parellela via a hardware abstraction layer.</p>
 
-<p>Despite being monolithic, gzll is a very thin layer that essentially has two different system call classes: task management and message passing. The tasks executed on top of gzll can be seen as containers, that communicate via FIFO, similar to dataflow programming.</p>
+<p>Despite being monolithic, gzll is a very thin layer that
+essentially has two different system call classes: task management and
+message passing. The tasks executed on top of gzll can be seen as
+containers, that communicate via FIFOs, similar to dataflow
+programming.</p>
 
-<p>gzll uses the OpTiMSoC runtime library (from <a href="http://github.com/optimsoc/baremetal-libraries">the baremetal-libraries repository</a>) to manage virtual memory and threads. The overall structure and software partitioning is organized as follows:</p>
+<p>gzll uses the OpTiMSoC runtime library to manage virtual memory and
+threads. The overall structure and software partitioning is organized
+as follows:</p>
 
 <img src="images/gzll-structure.png"/>
 
-<p>User space libraries are available <a href="http://github.com/optimsoc/gzll-libraries">in the gzll-libraries repository</a>.</p>
 
-<p>Finally, this repository contains the script for creating an image with the applications, the "scenario" (which applications are started where at boot) and the kernel.</p>
-
-<h4>
-<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h4>
-
-<p>The build is pretty straight forward. You will need an OpenRISC baremetal toolchain with multicore support from <a href="http://openrisc.github.io/newlib">here</a>. Beside this you need to build and install the OpTiMSoC baremetal libraries from <a href="http://optimsoc.github.io/baremetal-libraries">here</a>. Be sure, you have the <code>PKG_CONFIG_PATH</code> environment variable point to the baremetal libraries.</p>
-
-<p>Then simply run:</p>
-
-<pre><code>./autgen.sh
-mkdir build; cd build
-../configure --host=or1k-elf --prefix=/opt/optimsoc/gzll
-make
-make install
-</code></pre>
         </section>
 
         <footer>
